@@ -115,3 +115,5 @@ local.properties
 /classes
 build
 gradle.properties
+CryptoCurrency/gradle/
+CryptoCurrency/out/

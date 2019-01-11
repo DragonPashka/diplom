@@ -1,0 +1,40 @@
+buildscript {
+    repositories {
+        mavenCentral()
+    }
+    dependencies {
+        classpath("org.springframework.boot:spring-boot-gradle-plugin:1.5.9.RELEASE")
+    }
+}
+apply plugin: 'java'
+apply plugin: 'eclipse'
+apply plugin: 'idea'
+apply plugin: 'org.springframework.boot'
+
+
+jar {
+    baseName = 'gs-spring-boot'
+    version =  '0.1.0'
+}
+ext['hibernate.version']='5.1.0.Final'
+
+repositories {
+    mavenCentral()
+}
+
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
+
+dependencies {
+    compile("org.springframework.boot:spring-boot-starter-data-jpa")
+    compile("org.springframework.boot:spring-boot-starter-test")
+    compile("org.springframework.boot:spring-boot-starter-web")
+    compile group: 'postgresql', name: 'postgresql', version: '9.0-801.jdbc4'
+    compile group: 'org.projectlombok', name: 'lombok', version: '1.16.18'
+
+    compile group: 'org.jsoup', name: 'jsoup', version: '1.11.3'
+    compile group: 'net.sourceforge.htmlunit', name: 'htmlunit', version: '2.33'
+
+
+    testCompile("junit:junit")
+}
