@@ -18,23 +18,26 @@ import java.util.Date;
 @Entity
 public class CrypthoCurrencyEntity {
 
+    @Column(name = "CURRENCY_NAME")
+    private String name;
+
+    @Column(name = "SHORTt_NAME")
+    private String shortName;
+
     @Column(name = "TOKKEN_ADDRESS")
     private String address;
 
-    @Column(name = "CURRENCY_NAME")
-    private String name;
+    @Column(name = "ETHERSCAN")
+    private String etherscan;
 
     @Column(name = "COIN_BASE")
     private String coinBase;
 
-    @Column(name = "BUY_PRICE")
-    private BigDecimal buyPrice;
+    @Column(name = "ETHERDELTA")
+    private String etherdelta;
 
-    @Column(name = "SELL_PRICE")
-    private BigDecimal sellPrice;
-
-    @Column(name = "DATE_MODIFIED")
-    private Date dateModified;
+    @Column(name = "FORKDELTA")
+    private String forkdelta;
 
     @Column(name = "HOLDERS")
     private BigDecimal holders;
@@ -44,8 +47,5 @@ public class CrypthoCurrencyEntity {
 
     @Column(name = "SITE")
     private String site;
-
-    @Column(name = "AVERAGE_TEN_IN_MONTH")
-    private String average;
 
 }

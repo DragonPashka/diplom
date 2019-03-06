@@ -1,40 +1,27 @@
-buildscript {
-    repositories {
-        mavenCentral()
-    }
-    dependencies {
-        classpath("org.springframework.boot:spring-boot-gradle-plugin:1.5.9.RELEASE")
-    }
+plugins {
+    id 'org.springframework.boot' version '2.2.0.BUILD-SNAPSHOT'
+    id 'java'
 }
-apply plugin: 'java'
-apply plugin: 'eclipse'
-apply plugin: 'idea'
-apply plugin: 'org.springframework.boot'
 
+apply plugin: 'io.spring.dependency-management'
 
-jar {
-    baseName = 'gs-spring-boot'
-    version =  '0.1.0'
-}
-ext['hibernate.version']='5.1.0.Final'
+group = 'com.manning'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = '1.8'
 
 repositories {
     mavenCentral()
+    maven { url 'https://repo.spring.io/snapshot' }
+    maven { url 'https://repo.spring.io/milestone' }
 }
 
-sourceCompatibility = 1.8
-targetCompatibility = 1.8
-
 dependencies {
-    compile("org.springframework.boot:spring-boot-starter-data-jpa")
-    compile("org.springframework.boot:spring-boot-starter-test")
-    compile("org.springframework.boot:spring-boot-starter-web")
-    compile group: 'postgresql', name: 'postgresql', version: '9.0-801.jdbc4'
-    compile group: 'org.projectlombok', name: 'lombok', version: '1.16.18'
+    implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+    implementation 'org.springframework.boot:spring-boot-starter-web'
+    implementation 'postgresql:postgresql:9.0-801.jdbc4'
+    implementation 'org.jsoup:jsoup:1.11.3'
+    implementation 'net.sourceforge.htmlunit:htmlunit:2.33'
 
-    compile group: 'org.jsoup', name: 'jsoup', version: '1.11.3'
-    compile group: 'net.sourceforge.htmlunit', name: 'htmlunit', version: '2.33'
-
-
-    testCompile("junit:junit")
+    compileOnly 'org.projectlombok:lombok:1.16.18'
+    testImplementation 'org.springframework.boot:spring-boot-starter-test'
 }
