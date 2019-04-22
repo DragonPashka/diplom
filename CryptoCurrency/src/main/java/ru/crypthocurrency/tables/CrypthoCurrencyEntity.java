@@ -18,14 +18,15 @@ import java.util.Date;
 @Entity
 public class CrypthoCurrencyEntity {
 
+    @Id
+    @Column(name = "TOKKEN_ADDRESS")
+    private String address;
+
     @Column(name = "CURRENCY_NAME")
     private String name;
 
-    @Column(name = "SHORTt_NAME")
+    @Column(name = "SHORT_NAME")
     private String shortName;
-
-    @Column(name = "TOKKEN_ADDRESS")
-    private String address;
 
     @Column(name = "ETHERSCAN")
     private String etherscan;

@@ -12,7 +12,7 @@ import java.util.Optional;
 @RestController
 public class CrypthoCurrencyController
 {
-    @Autowired
+  /*  @Autowired
     private CrypthoCurrencyServices crypthoCurrencyServices;
 
     @RequestMapping(value = "/{address}", method = RequestMethod.GET)
@@ -44,7 +44,7 @@ public class CrypthoCurrencyController
         }
 
         return new ResponseEntity(String.format("The currency with address = %s is not exist", address),  HttpStatus.NOT_FOUND);
-    }
+    }*/
 
 
 

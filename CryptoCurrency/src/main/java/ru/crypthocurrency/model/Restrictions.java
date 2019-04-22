@@ -16,7 +16,7 @@ import java.util.List;
 
 public class Restrictions
 {
-    private static String coinBase="https://api.coinbase.com/v2/prices/%s-USD/%s";
+/*    private static String coinBase="https://api.coinbase.com/v2/prices/%s-USD/%s";
     private static String etherScanToken="https://etherscan.io/token/%s";
     private static String etherScanTransactions="http://api.etherscan.io/api?module=account&action=txlist&address=%s&startblock=earnest&endblock=latest&sort=asc&apikey=YourApiKeyToken";
 
@@ -48,6 +48,6 @@ public class Restrictions
                 currencyEntity.setSite(td.attr("href"));
             }
         }
-    }
+    }*/
 
 }

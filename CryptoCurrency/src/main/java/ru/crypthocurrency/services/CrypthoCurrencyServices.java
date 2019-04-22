@@ -10,14 +10,14 @@ import java.io.IOException;
 import java.util.List;
 import java.util.Optional;
 
-import static ru.crypthocurrency.model.Restrictions.setHoldersAndTransfers;
-import static ru.crypthocurrency.model.Restrictions.setOfficialSite;
+
 
 
 @Service
 @Log
 public class CrypthoCurrencyServices
 {
+    /*
     @Autowired
     private CrypthoCurrencyRepository crypthoCurrencyRepository;
 
@@ -61,5 +61,5 @@ public class CrypthoCurrencyServices
 
     public void deleteAll() {
         crypthoCurrencyRepository.deleteAll();
-    }
+    }*/
 }
