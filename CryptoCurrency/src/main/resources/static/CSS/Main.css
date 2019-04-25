@@ -1,0 +1,61 @@
+body{
+    text-align: center;
+    font-family: Arial, sans-serif;
+    font-size: 12px;
+}
+
+a{
+    text-decoration: none;
+    font-weight: bold;
+    color: #555;
+}
+
+a:hover{
+    color: #000;
+}
+
+div.main{
+    margin: auto;
+    text-align: left;
+    width: 720px;
+}
+
+div.clean{
+    border: 1px solid #850000;
+}
+
+.clean td, .clean th{
+    border: 2px solid #bbb;
+    background: #ddd;
+    padding: 5px 10px;
+    text-align: center;
+    border-radius: 2px;
+}
+
+.clean table{
+    margin: auto;
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+
+.clean caption{
+    font-weight: bold;
+
+}
+
+.gvChart,.clean{
+    border: 2px solid #850000;
+    border-radius: 5px;
+    -moz-border-radius: 10px;
+    width: 720px;
+
+    margin: auto;
+    margin-top: 20px;
+}
+
+pre{
+    background: #eee;
+    padding: 10px;
+    border-radius: 10px;
+    -moz-border-radius: 10px;
+}

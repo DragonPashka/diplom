@@ -3,23 +3,28 @@ package ru.crypthocurrency.services;
 import lombok.extern.java.Log;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import ru.crypthocurrency.coinapi.CoinApi;
+import ru.crypthocurrency.etherscan.EtherScanData;
 import ru.crypthocurrency.repositories.CrypthoCurrencyRepository;
 import ru.crypthocurrency.tables.CrypthoCurrencyEntity;
 
-import java.io.IOException;
 import java.util.List;
 import java.util.Optional;
-
-
 
 
 @Service
 @Log
 public class CrypthoCurrencyServices
 {
-    /*
+
     @Autowired
     private CrypthoCurrencyRepository crypthoCurrencyRepository;
+
+    @Autowired
+    private CoinApi coinApi;
+
+    @Autowired
+    private EtherScanData etherScanData;
 
     public Optional<CrypthoCurrencyEntity> findByAddress(String address){
         return crypthoCurrencyRepository.findById(address);
@@ -29,12 +34,17 @@ public class CrypthoCurrencyServices
 
         try {
             if(!crypthoCurrencyRepository.findById(entity.getAddress()).isPresent()) {
-                setHoldersAndTransfers(entity);
-                setOfficialSite(entity);
-                return crypthoCurrencyRepository.save(entity);
+                etherScanData.setHoldersAndTransfers(entity);
+                etherScanData.setOfficialSite(entity);
+                CrypthoCurrencyEntity savedEntity = crypthoCurrencyRepository.save(entity);
+
+                //Проставляем исторические данные за последние полгода
+                coinApi.setHistoricalData(entity.getAddress(), entity.getShortName());
+
+                return savedEntity;
             }
 
-        } catch (IOException e) {
+        } catch (Exception e) {
             log.warning("Error while saving the currency to DB");
         }
 
@@ -61,5 +71,5 @@ public class CrypthoCurrencyServices
 
     public void deleteAll() {
         crypthoCurrencyRepository.deleteAll();
-    }*/
+    }
 }

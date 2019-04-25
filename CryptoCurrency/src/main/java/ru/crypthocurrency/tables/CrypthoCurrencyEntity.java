@@ -9,7 +9,6 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import java.math.BigDecimal;
-import java.util.Date;
 
 @Data
 @AllArgsConstructor
@@ -22,23 +21,8 @@ public class CrypthoCurrencyEntity {
     @Column(name = "TOKKEN_ADDRESS")
     private String address;
 
-    @Column(name = "CURRENCY_NAME")
-    private String name;
-
     @Column(name = "SHORT_NAME")
     private String shortName;
-
-    @Column(name = "ETHERSCAN")
-    private String etherscan;
-
-    @Column(name = "COIN_BASE")
-    private String coinBase;
-
-    @Column(name = "ETHERDELTA")
-    private String etherdelta;
-
-    @Column(name = "FORKDELTA")
-    private String forkdelta;
 
     @Column(name = "HOLDERS")
     private BigDecimal holders;

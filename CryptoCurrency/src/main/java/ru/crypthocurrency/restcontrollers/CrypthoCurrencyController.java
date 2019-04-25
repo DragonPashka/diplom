@@ -12,7 +12,7 @@ import java.util.Optional;
 @RestController
 public class CrypthoCurrencyController
 {
-  /*  @Autowired
+    @Autowired
     private CrypthoCurrencyServices crypthoCurrencyServices;
 
     @RequestMapping(value = "/{address}", method = RequestMethod.GET)
@@ -28,7 +28,7 @@ public class CrypthoCurrencyController
     }
 
     @RequestMapping(value = "/addCurrency", method = RequestMethod.POST)
-    public ResponseEntity<CrypthoCurrencyEntity> addCurrency(@RequestBody CrypthoCurrencyEntity currency){
+    public ResponseEntity<CrypthoCurrencyEntity> addCurrency(CrypthoCurrencyEntity currency){
         CrypthoCurrencyEntity currencyEntity = crypthoCurrencyServices.save(currency);
         if(currencyEntity != null){
             return new ResponseEntity(currencyEntity, HttpStatus.OK);
@@ -44,7 +44,7 @@ public class CrypthoCurrencyController
         }
 
         return new ResponseEntity(String.format("The currency with address = %s is not exist", address),  HttpStatus.NOT_FOUND);
-    }*/
+    }
 
 
 

@@ -1,0 +1,23 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <title>Getting Started: Serving Web Content</title>
+</head>
+
+<body>
+<h3>Welcome, Enter The Employee Details</h3>
+
+    <form action="#" th:action="@{/addCurrency}" th:object="${crypthoCurrencyEntity}" method="post">
+        <p>
+            Name: <input type="text" th:field="*{shortName}" />
+        </p>
+        <p>
+            TOKKEN ADDRESS: <input type="text" th:field="*{address}" />
+        </p>
+        <p>
+            <input type="submit" value="Submit" />
+            <input type="reset" value="Reset" />
+        </p>
+    </form>
+</body>
+</html>
