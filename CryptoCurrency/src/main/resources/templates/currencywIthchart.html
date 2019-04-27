@@ -1,0 +1,99 @@
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Website</title>
+    <!-- Add CSS -->
+    <link rel="stylesheet" href="/CSS/menu/menu.css">
+    <link rel="stylesheet" href="/CSS/menu/center.css">
+    <!-- Add JavaScrip-->
+    <script type="text/javascript" src="http://www.google.com/jsapi"></script>
+    <script type="text/javascript" src="/js/jquery.min.js"></script>
+    <script type="text/javascript" src="/js/jquery.gvChart-0.1.min.js"></script>
+    <script type="text/javascript"> gvChartInit(); </script>
+    <script type="text/javascript" src="/js/priceGraphics.js"></script>
+    <script type="text/javascript" src="/js/selectListener.js"></script>
+
+</head>
+<body>
+    <header>
+        <nav class="top-menu">
+            <ul class="menu-main">
+                <li class="left-item">
+                    <select size="1" id="SelectCurrencies">
+                            <option value="">Выберете валюту</option>
+                            <option th:each="currency : ${currencies}"
+                                    th:value="${currency.address}"
+                                    th:utext="${currency.shortName}"/>
+                    </select>
+                </li>
+                <li class="left-item">
+                    <select size="1" id="AddCurrencyToGraphics">
+                        <option value="">Добавить валюту к графику</option>
+                        <option th:each="currency : ${currencies}"
+                                th:value="${currency.address}"
+                                th:utext="${currency.shortName}"/>
+                    </select>
+                </li>
+                <li class="left-item"><a href="">Story</a></li>
+                <li class="right-item"><a href="">Contact</a></li>
+                <li class="right-item"><a href="">Shop</a></li>
+                <li class="right-item"><a href="">Gallery</a></li>
+            </ul>
+            <a class="navbar-logo" href=""><img
+                    src="https://html5book.ru/wp-content/uploads/2017/04/lily-logo.png"></a>
+        </nav>
+    </header>
+    <div id="Graphics">
+        <table  id="PriceGraphics">
+                <caption>History price of currency</caption>
+                <thead>
+                    <tr>
+                        <th></th>
+                        <th th:each="date : ${cashedDate}" th:text="${date}">Date</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr th:each="currencyInMap : ${currenciesMap.keySet()}">
+                        <th th:text="${currencyInMap.shortName}">Name</th>
+                        <td th:each="history : ${currenciesMap.get(currencyInMap)}" th:text="${history.priceUSD}">historyPrice</td>
+                    </tr>
+                </tbody>
+        </table>
+
+        <table  id="TradeGraphics">
+            <caption>History trade count of currency</caption>
+            <thead>
+            <tr>
+                <th></th>
+                <th th:each="date : ${cashedDate}" th:text="${date}">Date</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr th:each="currencyInMap : ${currenciesMap.keySet()}">
+                <th th:text="${currencyInMap.shortName}">Name</th>
+                <td th:each="history : ${currenciesMap.get(currencyInMap)}" th:text="${history.tradesCount}">historyTrade</td>
+            </tr>
+            </tbody>
+        </table>
+
+        <table  id="VolumeGraphics">
+            <caption>History volume count of currency</caption>
+            <thead>
+            <tr>
+                <th></th>
+                <th th:each="date : ${cashedDate}" th:text="${date}">Date</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr th:each="currencyInMap : ${currenciesMap.keySet()}">
+                <th th:text="${currencyInMap.shortName}">Name</th>
+                <td th:each="history : ${currenciesMap.get(currencyInMap)}" th:text="${history.volumeTraded}">volumeTraded</td>
+            </tr>
+            </tbody>
+        </table>
+
+    </div>
+
+
+</body>
+</html>

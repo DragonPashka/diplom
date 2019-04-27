@@ -1,0 +1,12 @@
+@charset "UTF-8";
+
+.main {
+    height: 90%;
+    width: 67%;
+    margin-right: 17%;
+    margin-left: 17%;
+    background: #fff;
+    border: 4px double black;
+    text-align: center;
+}
+
