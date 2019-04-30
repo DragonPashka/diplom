@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <!-- Add CSS -->
+    <link rel="stylesheet" href="/CSS/menu/menu.css">
+    <link rel="stylesheet" href="/CSS/menu/center.css">
+    <link rel="stylesheet" href="/CSS/Main.css">
+
+</head>
+<body>
+
+<header>
+    <nav class="top-menu">
+        <ul class="menu-main">
+            <li class="left-item">
+                <a href="/Cryptho/CurrencyWithChart">Графики</a>
+            </li>
+            <li class="right-item"><a href="/Cryptho/Add">Добавить валюту в БД</a></li>
+        </ul>
+        <a class="navbar-logo" href="/Cryptho/Greeting"><img
+                src="https://html5book.ru/wp-content/uploads/2017/04/lily-logo.png"></a>
+    </nav>
+</header>
+
+<div class="clean">
+    <table id='AllCurrenciesTable'>
+        <caption>Все валюты в БД</caption>
+        <thead>
+        <tr>
+            <th></th>
+            <th>TOKKEN_ADDRESS</th>
+            <th>HOLDERS</th>
+            <th>TRANSFERS</th>
+            <th>SITE</th>
+        </tr>
+        </thead>
+        <tbody>
+
+        <tr th:each="currency : ${currencies}">
+            <th th:text="${currency.shortName}">Name</th>
+            <td th:text="${currency.address}">Adress</td>
+            <td th:text="${currency.holders}">HOLDERS</td>
+            <td th:text="${currency.transfers}">TRANSFERS</td>
+            <td th:text="${currency.site}">SITE</td>
+
+        </tr>
+        </tbody>
+    </table>
+</div>
+
+</body>
+</html>

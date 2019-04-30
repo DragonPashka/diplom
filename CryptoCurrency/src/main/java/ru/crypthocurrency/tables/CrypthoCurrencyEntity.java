@@ -30,6 +30,9 @@ public class CrypthoCurrencyEntity {
     @Column(name = "TRANSFERS")
     private BigDecimal transfers;
 
+    @Column(name = "TRAINING_DATA")
+    private String trainingData;
+
     @Column(name = "SITE")
     private String site;
 

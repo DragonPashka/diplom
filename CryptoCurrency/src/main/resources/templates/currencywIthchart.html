@@ -1,7 +1,7 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>Website</title>
+    <title>CrypthoCurrency</title>
     <!-- Add CSS -->
     <link rel="stylesheet" href="/CSS/menu/menu.css">
     <link rel="stylesheet" href="/CSS/menu/center.css">
@@ -34,12 +34,10 @@
                                 th:utext="${currency.shortName}"/>
                     </select>
                 </li>
-                <li class="left-item"><a href="">Story</a></li>
-                <li class="right-item"><a href="">Contact</a></li>
-                <li class="right-item"><a href="">Shop</a></li>
-                <li class="right-item"><a href="">Gallery</a></li>
+                <li class="right-item"><a href="/Cryptho/Add">Добавить валюту в БД</a></li>
+                <li class="right-item"><a href="/Cryptho/AllCurrenciesTable">Все валюты в БД</a></li>
             </ul>
-            <a class="navbar-logo" href=""><img
+            <a class="navbar-logo" href="/Cryptho/Greeting"><img
                     src="https://html5book.ru/wp-content/uploads/2017/04/lily-logo.png"></a>
         </nav>
     </header>

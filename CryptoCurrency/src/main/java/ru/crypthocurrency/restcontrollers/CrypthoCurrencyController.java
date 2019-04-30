@@ -27,15 +27,6 @@ public class CrypthoCurrencyController
         return new ResponseEntity(String.format("The currency with address = %s was not Found", address),  HttpStatus.NOT_FOUND);
     }
 
-    @RequestMapping(value = "/addCurrency", method = RequestMethod.POST)
-    public ResponseEntity<CrypthoCurrencyEntity> addCurrency(CrypthoCurrencyEntity currency){
-        CrypthoCurrencyEntity currencyEntity = crypthoCurrencyServices.save(currency);
-        if(currencyEntity != null){
-            return new ResponseEntity(currencyEntity, HttpStatus.OK);
-        }
-        return new ResponseEntity(currency,  HttpStatus.CONFLICT);
-    }
-
     @RequestMapping(value = "/{address}", method = RequestMethod.DELETE)
     public ResponseEntity deleteCurrencyByAddress(@PathVariable("address") String address){
 

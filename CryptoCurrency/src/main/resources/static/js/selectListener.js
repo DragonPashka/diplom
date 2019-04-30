@@ -33,7 +33,7 @@ jQuery(document).ready(function() {
                 }
             });
 
-            location.reload();
+            location.reload(true);
         }
 
 
@@ -74,7 +74,7 @@ jQuery(document).ready(function() {
                 }
             });
 
-            location.reload();
+            location.reload(true);
         }
 
 

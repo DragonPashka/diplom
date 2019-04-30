@@ -1,23 +1,41 @@
-<!DOCTYPE HTML>
+<!DOCTYPE html>
 <html>
 <head>
-    <title>Getting Started: Serving Web Content</title>
+    <meta charset="UTF-8">
+    <title>CrypthoCurrency</title>
+    <!-- Add CSS -->
+    <link rel="stylesheet" href="/CSS/menu/menu.css">
+    <link rel="stylesheet" href="/CSS/menu/center.css">
 </head>
-
 <body>
-<h3>Welcome, Enter The Employee Details</h3>
+    <header>
+        <nav class="top-menu">
+            <ul class="menu-main">
+                <li class="left-item">
+                    <a href="/Cryptho/CurrencyWithChart">Графики</a>
+                </li>
+                <li class="right-item"><a href="/Cryptho/AllCurrenciesTable">Все валюты в БД</a></li>
+            </ul>
+            <a class="navbar-logo" href="/Cryptho/Greeting"><img
+                    src="https://html5book.ru/wp-content/uploads/2017/04/lily-logo.png"></a>
+        </nav>
+    </header>
 
-    <form action="#" th:action="@{/addCurrency}" th:object="${crypthoCurrencyEntity}" method="post">
-        <p>
-            Name: <input type="text" th:field="*{shortName}" />
-        </p>
-        <p>
-            TOKKEN ADDRESS: <input type="text" th:field="*{address}" />
-        </p>
-        <p>
-            <input type="submit" value="Submit" />
-            <input type="reset" value="Reset" />
-        </p>
-    </form>
+<h2>Форма для добавления данные в БД</h2>
+<p>Необходимо ввести навзание валюты, а также её адресс</p>
+
+<form  action="#" th:action="@{/addCurrency}" th:object="${crypthoCurrencyEntity}" method="post">
+    <fieldset>
+        <legend>Personal information:</legend>
+        Currency name:<br>
+        <input type="text" name="Currency Name"  th:field="*{shortName}">
+        <br>
+        ADDRESS:<br>
+        <input type="text" name="ADDRESS" th:field="*{address}">
+        <br><br>
+        <input type="submit" value="Submit">
+    </fieldset>
+</form>
+
 </body>
 </html>
